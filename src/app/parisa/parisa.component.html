@@ -1,0 +1,18 @@
+<table border="5" align="center">
+  <thead>
+    <tr>
+      <th>username</th>
+      <th>id</th>
+      <th *ngIf="">print</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of Users;let odd=odd;let even=even"
+      [ngClass]="{odd:odd,even:even}">
+      <td (click)="showdata(user.username)">{{user.username}}</td>
+      {{user.username}}
+    </tr>
+  </tbody>
+</table>
+<button [disabled]="Users.length < 3  ">
+  number of user {{Users.length}} times. print</button>
